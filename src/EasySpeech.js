@@ -659,7 +659,7 @@ EasySpeech.speak = ({ text, voice, pitch, rate, volume, force, infiniteResume, .
   return new Promise((resolve, reject) => {
     status('init speak')
 
-    const utterance = createUtterance(text)
+    const utterance = window.utterance = createUtterance(text)
     const currentVoice = getCurrentVoice(voice)
 
     // XXX: if we force-speak, we may not get a current voice!
